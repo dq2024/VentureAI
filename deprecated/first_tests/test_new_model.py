@@ -1,7 +1,7 @@
 import requests
 
 API_URL = "https://api-inference.huggingface.co/models/google/flan-t5-xl"
-headers = {"Authorization": "Bearer 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"}
+headers = {"Authorization": "Bearer "}
 
 def query(payload):
     response = requests.post(API_URL, headers=headers, json=payload)
