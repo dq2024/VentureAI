@@ -159,10 +159,15 @@ def main():
     # Data
     df = pd.read_csv(CSV_PATH)
     dataset = PromptResponseDataset(df, tokenizer)
-    sampler = DistributedSampler(dataset, shuffle=True)
+    # TODO
+    #sampler = DistributedSampler(dataset, shuffle=True)
+    # dataloader = DataLoader(dataset,
+    #                          batch_size=BATCH_SIZE,
+    #                          sampler=sampler,
+    #                          pin_memory=True,
+    #                          num_workers=4)
     dataloader = DataLoader(dataset,
                              batch_size=BATCH_SIZE,
-                             sampler=sampler,
                              pin_memory=True,
                              num_workers=4)
 
