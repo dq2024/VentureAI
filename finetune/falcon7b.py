@@ -125,7 +125,7 @@ class PromptResponseDataset(Dataset):
 
 def main():
     # DDP setup
-    local_rank = int(os.environ.get('LOCAL_RANK', 0))
+   # local_rank = int(os.environ.get('LOCAL_RANK', 0))
     dist.init_process_group(backend='nccl')
     #torch.cuda.set_device(local_rank)
     torch.cuda.set_device(0)
