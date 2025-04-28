@@ -186,7 +186,7 @@ def main():
     # Train
     model.train()
     for epoch in range(start_epoch, EPOCHS):
-        sampler.set_epoch(epoch)
+        #sampler.set_epoch(epoch)
         for batch_idx, batch in enumerate(dataloader,
                                          start=start_batch if epoch == start_epoch else 0):
             optimizer.zero_grad(set_to_none=True)
