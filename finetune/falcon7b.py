@@ -126,11 +126,12 @@ class PromptResponseDataset(Dataset):
 def main():
     # DDP setup
    # local_rank = int(os.environ.get('LOCAL_RANK', 0))
+    local_rank = 0
     dist.init_process_group(backend='nccl')
-    #torch.cuda.set_device(local_rank)
-    torch.cuda.set_device(0)
-    #device = torch.device(f'cuda:{local_rank}')
-    device = torch.device(f'cuda:0')
+    torch.cuda.set_device(local_rank)
+    
+    device = torch.device(f'cuda:{local_rank}')
+   
 
     # Model & tokenizer
     tokenizer = AutoTokenizer.from_pretrained(MODEL_NAME)
