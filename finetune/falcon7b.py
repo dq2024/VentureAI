@@ -127,7 +127,7 @@ def main():
     # DDP setup
    # local_rank = int(os.environ.get('LOCAL_RANK', 0))
     local_rank = 0
-    dist.init_process_group(backend='nccl')
+    #dist.init_process_group(backend='nccl')
     torch.cuda.set_device(local_rank)
     
     device = torch.device(f'cuda:{local_rank}')
@@ -155,7 +155,7 @@ def main():
     # TODO actiavte thjis when i am using more GPUs
     #model = DistributedDataParallel(model, device_ids=[local_rank])
     model.to(device)
-    
+
     # Data
     df = pd.read_csv(CSV_PATH)
     dataset = PromptResponseDataset(df, tokenizer)
