@@ -289,7 +289,7 @@ def main():
             logger.info(f"Process {local_rank}: Wrapped model with DistributedDataParallel")
 
         # Read the data from the CSV file
-        data_path = '../data_generation/data_compilation/out_with_price_hours_rearranged.csv'
+        data_path = '../data/results.csv'
         if not os.path.exists(data_path):
             raise FileNotFoundError(f"Data file not found at {data_path}")
         data = pd.read_csv(data_path)
