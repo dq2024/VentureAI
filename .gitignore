@@ -1,3 +1,10 @@
+data/cleaned_wikivoyage.json
+data/wikivoyage.json
+data/wikivoyage.xml
+data/prompt_wikidata.csv
+
+
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -172,3 +179,4 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
