@@ -21,3 +21,4 @@ singularity exec ${nv} \
 source /ext3/env.sh; 
 conda activate venture_ai_env; 
 torchrun --nproc_per_node=1 falcon7b.py
+"
