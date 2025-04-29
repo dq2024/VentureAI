@@ -10,6 +10,7 @@
 #SBATCH --error=falcon7b-error.txt
 #SBATCH --mail-user=dq2024@nyu.edu
 #SBATCH --account=class
+#SBATCH --partition=gpu
 
 
 module purge
