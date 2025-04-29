@@ -10,7 +10,6 @@
 #SBATCH --error=falcon7b-error.txt
 #SBATCH --mail-user=dq2024@nyu.edu
 #SBATCH --mail-type=ALL
-#SBATCH --account=class
 
 
 module purge
