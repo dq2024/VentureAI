@@ -4,8 +4,7 @@ import os
 import torch
 from transformers import BitsAndBytesConfig  # Import only if using BitsAndBytes for 8-bit inference
 from peft import PeftModel  # Import PeftModel for loading LoRA adapters
-#import tripadvisor
-#import extract_rag
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -25,11 +24,17 @@ print("Loading tokenizer...")
 # Load the tokenizer from the trained model directory
 tokenizer = AutoTokenizer.from_pretrained(model_dir)
 
+bnb_config = BitsAndBytesConfig(
+    load_in_8bit=True,
+    bnb_8bit_compute_dtype=torch.float16
+)
+
 print("Loading base model...")
 # Load the base model without 8-bit quantization
 base_model = AutoModelForCausalLM.from_pretrained(
     model_dir,
-    torch_dtype=torch.float16,  # Changed from bfloat16 to float16 for broader GPU compatibility
+    quantization_config=bnb_config,
+    #torch_dtype=torch.float16,  # Changed from bfloat16 to float16 for broader GPU compatibility
     device_map="auto"           # Automatically maps the model to available devices
 )
 
@@ -99,18 +104,7 @@ if __name__ == "__main__":
 
         prompt = f" I would like to travel from {city_from} to {city_to} for {num_days} days. Give me a trip plan that focuses on restaurants."
 
-        #tripadvisor.use_city_name()
-        # tripadvisor.main(city_to)
-        # extract_rag.main(city_to)
-
-        # with open("rag_data.txt", "r", encoding="utf-8") as file:
-        #     rag_data = file.read().strip()
-
-        # prompt = rag_data + prompt
-
-        # if prompt.lower() == 'exit':
-        #     break
-
+       
         # Generate the response based on the input prompt
         response = generate_response(prompt, max_length=2000)
         print(f"\nResponse:\n{response}\n")
