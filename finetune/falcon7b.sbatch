@@ -8,7 +8,7 @@
 #SBATCH --mail-user=dq2024@nyu.edu
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --output=falcon7b.out
-#SBATCH --gres=gpu:0
+#SBATCH --gres=gpu:1
 
 if [[ -e /dev/nvidia0 ]]; then nv="--nv"; fi
 
