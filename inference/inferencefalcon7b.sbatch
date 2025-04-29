@@ -4,10 +4,10 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --time=1:00:00
 #SBATCH --mem=32GB
-#SBATCH --job-name=falcon7b
+#SBATCH --job-name=VAI_inf
 #SBATCH --mail-user=dq2024@nyu.edu
 #SBATCH --mail-type=BEGIN,END
-#SBATCH --output=falcon7b.out
+#SBATCH --output=inf_falcon7b.out
 #SBATCH --gres=gpu:1
 
 if [[ -e /dev/nvidia0 ]]; then nv="--nv"; fi
