@@ -9,6 +9,8 @@
 #SBATCH --output=falcon7b.out
 #SBATCH --error=falcon7b-error.txt
 #SBATCH --mail-user=dq2024@nyu.edu
+#SBATCH --account=class
+
 
 module purge
 cd /scratch/$USER
