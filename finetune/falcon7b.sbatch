@@ -3,14 +3,14 @@
 #SBATCH --ntasks-per-node=1              # runs 1 tasks on each server
 #SBATCH --cpus-per-task=4                # uses 4 compute cores per task
 #SBATCH --gres=gpu:0
-#SBATCH --time=01:00:00
+#SBATCH --time=11:00:00
 #SBATCH --mem=64GB
 #SBATCH --job-name=falcon7b
 #SBATCH --output=falcon7b.out
 #SBATCH --error=falcon7b-error.txt
 #SBATCH --mail-user=dq2024@nyu.edu
+#SBATCH --mail-type=ALL
 #SBATCH --account=class
-#SBATCH --partition=gpu
 
 
 module purge
