@@ -10,10 +10,14 @@
 #SBATCH --output=falcon7b.out
 #SBATCH --gres=gpu:0
 
+if [[ -e /dev/nvidia0 ]]; then nv="--nv"; fi
 
 module purge
-cd /scratch/$USER
-singularity exec --nv\
-    --overlay /scratch/$USER/overlay-25GB-500K.ext3:r \
-    /scratch/work/public/singularity/cuda11.3.0-cudnn8-devel-ubuntu20.04.sif\
-    /bin/bash -c "source /ext3/env.sh; conda activate venture_ai_env; cd /home/$USER/VentureAI/finetune; torchrun --nproc_per_node=1 falcon7b.py"
+
+singularity exec ${nv} \
+            --overlay /scratch/$USER/overlay-25GB-500K.ext3:ro \
+            /scratch/work/public/singularity/cuda12.1.1-cudnn8.9.0-devel-ubuntu22.04.2.sif \
+            /bin/bash -c "
+source /ext3/env.sh; 
+conda activate venture_ai_env; 
+torchrun --nproc_per_node=1 falcon7b.py
