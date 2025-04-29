@@ -101,7 +101,6 @@ def main():
                 for idx, prompt, context, future in futures:
                     try:
                         response = future.result()
-                        print(idx)
                         results.append({
                             "prompt": prompt,
                             "context": context,
@@ -125,7 +124,6 @@ def main():
         for idx, prompt, context, future in futures:
             try:
                 response = future.result()
-                print(idx)
                 results.append({
                     "prompt": prompt,
                     "context": context,
