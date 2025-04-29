@@ -96,15 +96,16 @@ def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repet
 if __name__ == "__main__":
     print("\nModel loaded. Ready for inference.\n")
 
-    while True:
+    #while True:
         # prompt = input("Enter a prompt (or type 'exit' to quit): ")
-        city_from = input("Enter the city you are traveling FROM (or type 'exit' to quit): ")
-        city_to = input("Enter the city you are traveling TO (or type 'exit' to quit): ")
-        num_days = input("Enter the number of days you will be traveling as a single number (or type 'exit' to quit): ")
+    # city_from = input("Enter the city you are traveling FROM (or type 'exit' to quit): ")
+    # city_to = input("Enter the city you are traveling TO (or type 'exit' to quit): ")
+    # num_days = input("Enter the number of days you will be traveling as a single number (or type 'exit' to quit): ")
 
-        prompt = f" I would like to travel from {city_from} to {city_to} for {num_days} days. Give me a trip plan that focuses on restaurants."
+    #prompt = f" I would like to travel from {city_from} to {city_to} for {num_days} days. Give me a trip plan that focuses on restaurants."
+    prompt = f" I would like to travel from New York to Istanbul for 7 days. Give me a trip plan."
 
-       
-        # Generate the response based on the input prompt
-        response = generate_response(prompt, max_length=2000)
-        print(f"\nResponse:\n{response}\n")
+    
+    # Generate the response based on the input prompt
+    response = generate_response(prompt, max_length=2000)
+    print(f"\nResponse:\n{response}\n")
