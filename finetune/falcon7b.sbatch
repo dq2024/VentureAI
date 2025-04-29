@@ -11,10 +11,9 @@
 #SBATCH --gres=gpu:0
 
 
-
 module purge
 cd /scratch/$USER
-singularity exec --bind /scratch --nv\
+singularity exec --nv\
     --overlay /scratch/$USER/overlay-25GB-500K.ext3:r \
     /scratch/work/public/singularity/cuda11.3.0-cudnn8-devel-ubuntu20.04.sif\
     /bin/bash -c "source /ext3/env.sh; conda activate venture_ai_env; cd /home/$USER/VentureAI/finetune; torchrun --nproc_per_node=1 falcon7b.py"
