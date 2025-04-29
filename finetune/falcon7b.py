@@ -285,7 +285,7 @@ def main():
     start_epoch, start_batch = ep_t.item(), bt_t.item()
 
     # Training loop
-    total_epochs = 3
+    total_epochs = 100
     grad_acc_steps = 4
     for epoch in range(start_epoch, total_epochs):
         sampler.set_epoch(epoch)
@@ -338,7 +338,7 @@ def main():
                         optimizer=optimizer,
                         scaler=scaler,
                         losses=losses,
-                        checkpoint_dir='checkpoints_falcon7b_7',
+                        checkpoint_dir='checkpoints_falcon7b',
                         local_rank=0
                     )
 
@@ -357,11 +357,11 @@ def main():
             optimizer=optimizer,
             scaler=scaler,
             losses=losses,
-            checkpoint_dir='checkpoints_falcon7b_7',
+            checkpoint_dir='checkpoints_falcon7b',
             local_rank=0
         )
 
-        out_dir = "./trained_falcon7b_7"
+        out_dir = "./trained_falcon7b"
         os.makedirs(out_dir, exist_ok=True)
         model.module.save_pretrained(out_dir)
         tokenizer.save_pretrained(out_dir)

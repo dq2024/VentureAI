@@ -2,7 +2,7 @@
 
 #SBATCH --nodes=1
 #SBATCH --cpus-per-task=1
-#SBATCH --time=1:00:00
+#SBATCH --time=4:00:00
 #SBATCH --mem=32GB
 #SBATCH --job-name=falcon7b
 #SBATCH --mail-user=dq2024@nyu.edu
