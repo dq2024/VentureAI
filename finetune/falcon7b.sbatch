@@ -10,6 +10,7 @@
 #SBATCH --error=falcon7b-error.txt
 #SBATCH --mail-user=dq2024@nyu.edu
 
+module purge
 cd /scratch/$USER
 singularity exec --bind /scratch --nv\
     --overlay /scratch/$USER/overlay-25GB-500K.ext3:rw \
