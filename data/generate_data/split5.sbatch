@@ -21,5 +21,11 @@ singularity exec ${nv} \
             /bin/bash -c "
 source /ext3/env.sh; 
 conda activate venture_ai_env; 
+
+if [ -f .env ]; then
+    source .env
+fi
+
+
 python3 generate_data/generate_data_split_5.py
 "
