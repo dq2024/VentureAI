@@ -46,7 +46,7 @@ model = PeftModel.from_pretrained(base_model, model_dir)
 model.eval()
 
 # Define a function for generating responses with enhanced parameters
-def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repetition_penalty=1.2, no_repeat_ngram_size=6):
+def generate_response(prompt, max_length=1000, temperature=0.4, top_p=0.9, repetition_penalty=1.2, no_repeat_ngram_size=3):
     """
     Generates a response from the model based on the input prompt.
 
@@ -91,10 +91,7 @@ def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repet
         )
 
     # Decode the generated tokens back into text
-    # response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
-    # return response
-    generated_ids = output_ids[0, input_ids.shape[-1]:]  
-    response = tokenizer.decode(generated_ids, skip_special_tokens=True)
+    response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
     return response
 
 # Example usage of the inference script
