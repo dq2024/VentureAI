@@ -103,7 +103,36 @@ if __name__ == "__main__":
     # num_days = input("Enter the number of days you will be traveling as a single number (or type 'exit' to quit): ")
 
     #prompt = f" I would like to travel from {city_from} to {city_to} for {num_days} days. Give me a trip plan that focuses on restaurants."
-    prompt = f" I would like to travel from New York to Istanbul for 7 days. Give me a trip plan."
+    prompt = f''' I would like to travel from New York to Antalya for 7 days. Give me a trip plan. The information below is about Antalya Use it in your response. \n 
+        [See]
+- Maiden's Tower
+- Yakacık Hill
+- Toy Museum (8 TL (5 TL for children))
+- İçmeler
+- Anadolu Citadel
+
+[Do]
+- Üsküdar Musical Society
+- Caddebostan Beach (10 TL, including the deckchair rent, restrooms, and shower)
+- Tarihi Çinili Hamamı
+
+[Eat]
+- Tike Kebap Şaşkınbakkal (From 30-40 TL/pp)
+- Nakkaş Kebap
+- Beylerbeyi Lokantasi
+- Çiya Sofrası (From €10-15 pp)
+
+[Drink]
+- Karga (7 TL for a pint (0.50 litre) of beer)
+- Q Bar (20 TL for cocktails)
+
+[Sleep]
+- Hush Hostel Lounge (Dorms from 12 €, single from 25€, double from 30 € (check the website as prices vary from day to day))
+- A'jia Hotel
+- Hotel Deniz (130/150/165 YTL single/double/triple rooms)
+- Hotel Suadiye
+- Hotel Zirve (55-120 YTL)
+    '''
 
     
     # Generate the response based on the input prompt

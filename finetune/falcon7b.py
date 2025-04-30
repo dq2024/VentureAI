@@ -262,7 +262,7 @@ def main():
 
     # Checkpoint setup
     latest_ckpt = find_latest_checkpoint(
-        checkpoint_dir='checkpoints_falcon7b_7',
+        checkpoint_dir='checkpoints_falcon7b',
         len_dataloader=len(dataloader)
     )
 
