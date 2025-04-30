@@ -69,15 +69,17 @@ def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repet
         truncation=True,
         max_length=2048  # Ensure that input does not exceed model's max context length
     )
-    input_ids = encoding['input_ids'].to(model.device)
-    attention_mask = encoding['attention_mask'].to(model.device)
+    # input_ids = encoding['input_ids'].to(model.device)
+    # attention_mask = encoding['attention_mask'].to(model.device)
+    input_ids = encoding.input_ids.to(model.device)
+    attention_mask = encoding.attention_mask.to(model.device)
 
     # Generate the response using the model's generate method with specified parameters
     with torch.no_grad():
         output_ids = model.generate(
             input_ids=input_ids,
             attention_mask=attention_mask,
-            max_length=max_length,                     # Increased max_length for longer responses
+            max_new_tokens=max_length,                     # Increased max_length for longer responses
             temperature=temperature,                   # Controls randomness
             top_p=top_p,                               # Nucleus sampling
             repetition_penalty=repetition_penalty,     # Penalizes repetition
@@ -89,8 +91,10 @@ def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repet
         )
 
     # Decode the generated tokens back into text
-    response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
-    return response
+    # response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
+    # return response
+    generated_ids = output_ids[0, input_ids.shape[-1]:]
+    return tokenizer.decode(generated_ids, skip_special_tokens=True)
 
 # Example usage of the inference script
 if __name__ == "__main__":
