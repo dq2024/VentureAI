@@ -5,12 +5,12 @@ old_data_dump/prompt_wikidata.csv
 data/city_analysis_report.csv
 data/wikivoyage-listings-en.csv
 data/city_list.txt
-data/prompt_wikidata.csv
 old_data_listings/city_analysis_report.csv
 old_data_listings/wikivoyage-listings-en.csv
 old_data_listings/city_list.txt
 old_data_listings/prompt_wikidata.csv
 old_data_dump/results.csv
+
 
 
 
