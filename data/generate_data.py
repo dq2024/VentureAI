@@ -59,10 +59,10 @@ def main():
         for idx, (prompt, data) in enumerate(tqdm(prompts_responses, desc="Processing prompts")):
             full_prompt = (
                 "I am providing you with a Query that will ask you to plan a trip for me with instructions. "
-                "I will also provide you with data regarding the location I want to travel to. "
-                "Only use that data provided to answer the prompt; do not come up with anything new.\n\n"
-                f"{data}\n\n"
-                f"{prompt}\n"
+                "I will also provide you with context data regarding the location I want to travel to. "
+                "Only use the context provided to answer the prompt; do not come up with anything new.\n\n"
+                f"{prompt}\n\n"
+                f"{data}\n"
             )
 
             future = executor.submit(generate_solution_with_openai, full_prompt)

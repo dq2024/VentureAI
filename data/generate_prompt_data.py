@@ -165,7 +165,7 @@ def create_prompts_responses(city_analysis: Dict[str, Dict],
             )
             data.append({
                 "title": city,
-                "prompt": prompt,
+                "prompt": prompt + f" The context below is about {city}. Please use it in your response.\n",
                 "response": "[Context]\n" + response_text
             })
     print(f"Total prompts/responses created: {len(data)}")
@@ -224,7 +224,7 @@ def generate_city_report(city_analysis: Dict[str, Dict], output_file: str = "cit
         print(f"  {SECTION_MAPPING[sec]}: {cnt} cities ({cnt/len(df)*100:.1f}%)")
 
 def main():
-    city_list_path     = "city_list.txt"
+    city_list_path     = "cities/city_list.txt"
     city_data_csv_path = "wikivoyage-listings-en.csv"
     output_csv_path    = "prompt_wikidata.csv"
 
