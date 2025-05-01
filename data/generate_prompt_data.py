@@ -41,24 +41,26 @@ JUNK_PATTERNS = [
 
 PROMPT_VARIATIONS = [
     # Basic itinerary requests
-    "Can you create a {days}-day travel itinerary from {from_city} to {to_city}?",
-    "I'm planning a {days}-day trip from {from_city} to {to_city}. Could you build a day-by-day travel itinerary?",
-    "Design a detailed {days}-day travel itinerary for a trip from {from_city} to {to_city}.",
-    "Help me plan a {days}-day itinerary for my trip from {from_city} to {to_city}.",
-    "Please draft a {days}-day travel plan from {from_city} to {to_city}.",
-    "I'd love a day-by-day {days}-day itinerary for my trip from {from_city} to {to_city}.",
-    "What would a {days}-day itinerary look like for a trip from {from_city} to {to_city}?",
-    "Can you suggest a detailed {days}-day travel itinerary from {from_city} to {to_city}?",
-    # Budget-focused itineraries
-    "Can you create a {days}-day itinerary with a total budget of $500 for traveling from {from_city} to {to_city}?",
-    "I need a {days}-day travel itinerary from {from_city} to {to_city} with a budget of around $100 per day.",
-    "Please plan a {days}-day itinerary for a trip from {from_city} to {to_city} with a luxury budget of $500 per day.",
-    "Create a {days}-day travel itinerary from {from_city} to {to_city} with a moderate budget of $200-300 per day.",
-    # Interest-specific itineraries
-    "Create a {days}-day restaurant focused itinerary for my trip from {from_city} to {to_city}.",
-    "I need a {days}-day itinerary with the best attractions for my journey from {from_city} to {to_city}.",
-    "Please build a {days}-day itinerary highlighting the best hotels and restaurants in {to_city} for visitors from {from_city}.",
-    "Generate a {days}-day itinerary that includes must-visit bars and attractions in {to_city} for travelers from {from_city}."
+    # TODO add this back in later after first finetune
+    # "Can you create a {days}-day travel itinerary from {from_city} to {to_city}?",
+    # "I'm planning a {days}-day trip from {from_city} to {to_city}. Could you build a day-by-day travel itinerary?",
+    # "Design a detailed {days}-day travel itinerary for a trip from {from_city} to {to_city}.",
+    # "Help me plan a {days}-day itinerary for my trip from {from_city} to {to_city}.",
+    # "Please draft a {days}-day travel plan from {from_city} to {to_city}.",
+    # "I'd love a day-by-day {days}-day itinerary for my trip from {from_city} to {to_city}.",
+    # "What would a {days}-day itinerary look like for a trip from {from_city} to {to_city}?",
+    # "Can you suggest a detailed {days}-day travel itinerary from {from_city} to {to_city}?",
+    # # Budget-focused itineraries
+    # "Can you create a {days}-day itinerary with a total budget of $500 for traveling from {from_city} to {to_city}?",
+    # "I need a {days}-day travel itinerary from {from_city} to {to_city} with a budget of around $100 per day.",
+    # "Please plan a {days}-day itinerary for a trip from {from_city} to {to_city} with a luxury budget of $500 per day.",
+    # "Create a {days}-day travel itinerary from {from_city} to {to_city} with a moderate budget of $200-300 per day.",
+    # # Interest-specific itineraries
+    # "Create a {days}-day restaurant focused itinerary for my trip from {from_city} to {to_city}.",
+    # "I need a {days}-day itinerary with the best attractions for my journey from {from_city} to {to_city}.",
+    # "Please build a {days}-day itinerary highlighting the best hotels and restaurants in {to_city} for visitors from {from_city}.",
+    # "Generate a {days}-day itinerary that includes must-visit bars and attractions in {to_city} for travelers from {from_city}."
+    "I would like to travel from {from_city} to {to_city} for {days} days. Please create a day by day itinerary."
 ]
 
 def load_city_list(file_path: str) -> List[str]:
@@ -224,7 +226,7 @@ def generate_city_report(city_analysis: Dict[str, Dict], output_file: str = "cit
 def main():
     city_list_path     = "city_list.txt"
     city_data_csv_path = "wikivoyage-listings-en.csv"
-    output_csv_path    = "prompt_wikidata_new.csv"
+    output_csv_path    = "prompt_wikidata.csv"
 
     if not os.path.exists(city_list_path):
         print(f"Error: '{city_list_path}' not found.")
