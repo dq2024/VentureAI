@@ -1,14 +1,14 @@
 #!/bin/bash
 
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=2
-#SBATCH --time=6:00:00
+#SBATCH --cpus-per-task=4
+#SBATCH --time=8:00:00
 #SBATCH --mem=32GB
 #SBATCH --job-name=falcon7b
 #SBATCH --mail-user=dq2024@nyu.edu
 #SBATCH --mail-type=BEGIN,END
 #SBATCH --output=falcon7b.out
-#SBATCH --gres=gpu:2
+#SBATCH --gres=gpu:4
 
 if [[ -e /dev/nvidia0 ]]; then nv="--nv"; fi
 

@@ -175,7 +175,7 @@ def main():
     with record_function("model_loading"):
         model = AutoModelForCausalLM.from_pretrained(
             model_name,
-            quantization_config=bnb_config,
+            #quantization_config=bnb_config,
             torch_dtype=torch.float16,
             device_map={"": device}
         )
