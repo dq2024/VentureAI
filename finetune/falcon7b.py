@@ -199,7 +199,7 @@ def main():
     if not os.path.exists(data_path):
         raise FileNotFoundError(f"Data file not found: {data_path}")
     data = pd.read_csv(data_path)
-    data = data.head(int(len(data) * 0.01))  # first 1%
+    #data = data.head(int(len(data) * 0.01))  # first 1%
 
     class PromptResponseDataset(Dataset):
         def __init__(self, df, tokenizer, max_length=700):
