@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #SBATCH --nodes=1
-#SBATCH --cpus-per-task=1
+#SBATCH --cpus-per-task=2
 #SBATCH --time=6:00:00
 #SBATCH --mem=32GB
 #SBATCH --job-name=falcon7b
