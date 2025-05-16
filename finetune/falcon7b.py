@@ -296,9 +296,13 @@ def main():
             if local_rank == 0 else dataloader
 
         # Skip if resuming mid-epoch
-        if epoch == start_epoch and start_batch > 0:
-            for _ in range(start_batch):
-                next(iterator, None)
+        # if epoch == start_epoch and start_batch > 0:
+        #     for _ in range(start_batch):
+        #         next(iterator, None)
+        for batch_idx, batch in enumerate(iterator):
+            # skip everything before start_batch
+            if epoch == start_epoch and batch_idx < start_batch:
+                continue
 
         accumulated_loss = 0.0
         for batch_idx, batch in enumerate(iterator, start=(start_batch if epoch == start_epoch else 0)):
