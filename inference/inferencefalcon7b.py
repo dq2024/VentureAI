@@ -74,6 +74,8 @@ def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repet
     input_ids = encoding.input_ids.to(model.device)
     attention_mask = encoding.attention_mask.to(model.device)
 
+    input_len = input_ids.shape[-1]
+
     # Generate the response using the model's generate method with specified parameters
     with torch.no_grad():
         output_ids = model.generate(
@@ -91,7 +93,8 @@ def generate_response(prompt, max_length=2000, temperature=0.2, top_p=0.9, repet
         )
 
     # Decode the generated tokens back into text
-    response = tokenizer.decode(output_ids[0], skip_special_tokens=True)
+    gen_ids = output_ids[0, input_len:]
+    response = tokenizer.decode(gen_ids, skip_special_tokens=True)
     return response
 
 # Example usage of the inference script
