@@ -105,35 +105,40 @@ if __name__ == "__main__":
     # num_days = input("Enter the number of days you will be traveling as a single number (or type 'exit' to quit): ")
 
     #prompt = f" I would like to travel from {city_from} to {city_to} for {num_days} days. Give me a trip plan that focuses on restaurants."
-    prompt = f''' I would like to travel from New York to Antalya for 7 days. Give me a trip plan. The information below is about Antalya Use it in your response. \n 
-        [See]
-- Maiden's Tower
-- Yakacık Hill
-- Toy Museum (8 TL (5 TL for children))
-- İçmeler
-- Anadolu Citadel
+    prompt = f''' I would like to travel from New York to Antalya for 7 days. Please create a day by day itinerary. The context below is about Antalya. Please use it in your response. \n 
+    [Context]
+[Attractions]
+- Old Dam and Dilberler Seki Road
+- Old Town and the Clock Tower
+- Central Park
+- Ethnographic Museum of Adana
+  Closed for renovation.
 
-[Do]
-- Üsküdar Musical Society
-- Caddebostan Beach (10 TL, including the deckchair rent, restrooms, and shower)
-- Tarihi Çinili Hamamı
+[Restaurants]
+- L'estaquade
+  Situated on the Right Bank of the river (it is the building that just out over the water on stilts) you will get a great view of the Bordeaux waterfront at the same time as a delicious meal.
+- Mado's
+  Sweet shop. Higher class than your regular street vendor and a little pricey, but delicious food. You should eat special Turkish ice cream.
+- Cafe Ora
+  Has a bar on second floor. You can have a ''bici bici'' (traditional Adana sweet) for TRY3 there.
+- Adana Kebab
+  Delicious and famous Adana kebap and mezzes, usually accompanied by salgam (turnip) juice and/or raki (traditional Turkish alcoholic drink).
 
-[Eat]
-- Tike Kebap Şaşkınbakkal (From 30-40 TL/pp)
-- Nakkaş Kebap
-- Beylerbeyi Lokantasi
-- Çiya Sofrası (From €10-15 pp)
+[Bars]
+- Havana Club
+  The grand hotel is a must-see in Abu Dhabi and the actual club is nicely decorated, comfortable, has great service, a balcony overlooking the hotel grounds, and provides a fun time with great music and very colorful laser shows.
+- The Yacht Club
+  offers a gorgeous view of the sunset over the marina if you sit outside. Inside has a very modern, minimalistic feel. The cocktails are delicious, but expensive.
+- Lebinese Flower
+  Great food and nice atmosphere.
 
-[Drink]
-- Karga (7 TL for a pint (0.50 litre) of beer)
-- Q Bar (20 TL for cocktails)
-
-[Sleep]
-- Hush Hostel Lounge (Dorms from 12 €, single from 25€, double from 30 € (check the website as prices vary from day to day))
-- A'jia Hotel
-- Hotel Deniz (130/150/165 YTL single/double/triple rooms)
-- Hotel Suadiye
-- Hotel Zirve (55-120 YTL)
+[Hotels]
+- Hilton Adana (€100+)
+  The tallest building in town. Looks quite strange in a not that big town to have such a huge Hilton Hotel.
+- Garajlar Hotel (TRY15)
+  You will have to pay extra for the bath (TRY5).
+- Konya Hotel (TRY20 non-air-con, TRY30 for rooms with air-con)
+  If you insist, they can give you a cheaper, small room. The rooms are clean but there is no heater.
     '''
 
     
