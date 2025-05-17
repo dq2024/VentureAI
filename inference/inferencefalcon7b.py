@@ -114,34 +114,23 @@ if __name__ == "__main__":
 - Old Dam and Dilberler Seki Road
 - Old Town and the Clock Tower
 - Central Park
-- Ethnographic Museum of Adana
-  Closed for renovation.
+- Ethnographic Museum of Antalya
 
 [Restaurants]
 - L'estaquade
-  Situated on the Right Bank of the river (it is the building that just out over the water on stilts) you will get a great view of the Bordeaux waterfront at the same time as a delicious meal.
 - Mado's
-  Sweet shop. Higher class than your regular street vendor and a little pricey, but delicious food. You should eat special Turkish ice cream.
 - Cafe Ora
-  Has a bar on second floor. You can have a ''bici bici'' (traditional Adana sweet) for TRY3 there.
-- Adana Kebab
-  Delicious and famous Adana kebap and mezzes, usually accompanied by salgam (turnip) juice and/or raki (traditional Turkish alcoholic drink).
+- Antalya Kebab
 
 [Bars]
 - Havana Club
-  The grand hotel is a must-see in Abu Dhabi and the actual club is nicely decorated, comfortable, has great service, a balcony overlooking the hotel grounds, and provides a fun time with great music and very colorful laser shows.
 - The Yacht Club
-  offers a gorgeous view of the sunset over the marina if you sit outside. Inside has a very modern, minimalistic feel. The cocktails are delicious, but expensive.
 - Lebinese Flower
-  Great food and nice atmosphere.
 
 [Hotels]
-- Hilton Adana (€100+)
-  The tallest building in town. Looks quite strange in a not that big town to have such a huge Hilton Hotel.
+- Hilton Antalya (€100+)
 - Garajlar Hotel (TRY15)
-  You will have to pay extra for the bath (TRY5).
-- Konya Hotel (TRY20 non-air-con, TRY30 for rooms with air-con)
-  If you insist, they can give you a cheaper, small room. The rooms are clean but there is no heater.
+- Konya Hotel 
     '''
 
     
