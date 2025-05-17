@@ -116,11 +116,24 @@ if __name__ == "__main__":
 - Central Park
 - Ethnographic Museum of Antalya
 
+[Activities]
+- Antalya Theatre
+- National Park of Antalya
+- Antalya Archaeology Museum
+
+[Shops]
+- Antalya Mall
+- Antalya Shopping Center
+- MarkAntalya Mall
+- TerraCity
+
 [Restaurants]
 - L'estaquade
 - Mado's
 - Cafe Ora
 - Antalya Kebab
+- Vanilla Restaurant
+- Pastorale Restaurant
 
 [Bars]
 - Havana Club
