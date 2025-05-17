@@ -32,7 +32,7 @@ bnb_config = BitsAndBytesConfig(
 print("Loading base model...")
 # Load the base model without 8-bit quantization
 base_model = AutoModelForCausalLM.from_pretrained(
-    model_dir,
+    "tiiuae/falcon-7b",
     quantization_config=bnb_config,
     #torch_dtype=torch.float16,  # Changed from bfloat16 to float16 for broader GPU compatibility
     device_map="auto"           # Automatically maps the model to available devices
